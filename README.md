@@ -1,4 +1,4 @@
-# rroemhild/errbot
+# Devops-errbot
 
 - [Introduction](#introduction)
 - [Quick Start](#quick-start)
@@ -29,14 +29,7 @@ docker run -d \
     -e BOT_ADMINS=admin@xmpp.local \
     -e CHATROOM_PRESENCE=err@conference.xmpp.local \
     -e "TZ=Europe/Berlin" \
-    rroemhild/errbot
-```
-
-or try the docker compose example
-
-```bash
-wget https://raw.githubusercontent.com/rroemhild/docker-err/master/docker-compose.yml
-docker-compose up
+    bipeens/Devops-errbot
 ```
 
 # Configuration

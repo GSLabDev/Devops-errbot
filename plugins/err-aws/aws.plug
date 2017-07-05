@@ -1,6 +1,6 @@
 [Core]
-Name = Mesos
-Module = mesos
+Name = Aws
+Module = aws
 
 [Documentation]
 Description = view the last 10 lines of a file

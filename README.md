@@ -17,8 +17,6 @@
 
 Dockerfile to build an [Errbot](http://errbot.io) (the pluggable chatbot) container image.
 
-Current Version: `4.3`
-
 # Quick Start
 
 ```
@@ -28,7 +26,6 @@ docker run -d \
     -e BOT_PASSWORD=errbotpwd \
     -e BOT_ADMINS=admin@xmpp.local \
     -e CHATROOM_PRESENCE=err@conference.xmpp.local \
-    -e "TZ=Europe/Berlin" \
     bipeens/Devops-errbot
 ```
 
@@ -47,23 +44,18 @@ Below is the complete list of available options that can be used to customize yo
 - **BOT_USERNAME**: The UID for the bot user.
 - **BOT_PASSWORD**: The corresponding password for the user.
 - **BOT_TOKEN**: Token for HipChat and Slack backend.
-- **BOT_SERVER**: Server address for XMPP and HipChat.
-- **BOT_PORT**: Server port.
 - **BOT_SSL**: Use SSL for IRC backend. Default to `False`.
 - **BOT_ENDPOINT**: HipChat endpoint for hosted HipChat.
 - **BOT_NICKNAME**: Nickname for IRC backend.
 - **BOT_ADMINS**: Bot admins separated with comma. Defaults to `admin@localhost`.
 - **CHATROOM_PRESENCE**: Chatrooms your bot should join on startup.
 - **CHATROOM_FN**: The FullName, or nickname, your bot should use. Defaults to `Err`.
-- **XMPP_CA_CERT_FILE**: Path to a file containing certificate authorities. Default to `None`.
 - **BOT_PREFIX**: Command prefix for the bot. Default to `!`.
 - **BOT_PREFIX_OPTIONAL_ON_CHAT**: Optional prefix for normal chat. Default to `False`.
 - **BOT_ALT_PREFIXES**: Alternative prefixes.
 - **BOT_ALT_PREFIX_SEPARATORS**: Alternative prefixes separators.
 - **BOT_ALT_PREFIX_CASEINSENSITIVE**:  Require correct capitalization. Defaults to `False`.
 - **HIDE_RESTRICTED_COMMANDS**: Hide the restricted commands from the help output. Defaults to `False`.
-- **HIDE_RESTRICTED_ACCESS**: Do not reply error message. Defaults to `False`.
-- **DIVERT_TO_PRIVATE**: Private commands.
 - **MESSAGE_SIZE_LIMIT**: Maximum length a single message may be. Defaults to `10000`.
 
 # Persistence

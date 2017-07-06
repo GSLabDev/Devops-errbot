@@ -3,7 +3,7 @@ Name = Logs
 Module = logs
 
 [Documentation]
-Description = view the last 10 lines of a file
+Description = View the last 10 lines of a file
 
 [Python]
 Version = 2+

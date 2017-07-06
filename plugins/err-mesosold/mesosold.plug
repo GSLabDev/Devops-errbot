@@ -1,9 +1,0 @@
-[Core]
-Name = Mesosold
-Module = mesosold
-
-[Python]
-Version=2+
-
-[Documentation]
-Description = Mesos plugin to manage Mesos API

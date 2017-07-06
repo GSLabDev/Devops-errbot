@@ -3,7 +3,7 @@ Name = Mesos
 Module = mesos
 
 [Documentation]
-Description = view the last 10 lines of a file
+Description = Run mesos master and agent api calls
 
 [Python]
 Version = 2+

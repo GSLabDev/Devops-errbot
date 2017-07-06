@@ -3,7 +3,7 @@ Name = Aws
 Module = aws
 
 [Documentation]
-Description = view the last 10 lines of a file
+Description = View the output of aws cli command
 
 [Python]
 Version = 2+

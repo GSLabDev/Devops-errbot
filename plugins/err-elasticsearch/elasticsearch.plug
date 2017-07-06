@@ -1,0 +1,10 @@
+[Core]
+Name = Elasticsearch
+Module = elasticsearch
+
+[Documentation]
+Description = Run elasticsearch api calls
+
+[Python]
+Version = 2+
+

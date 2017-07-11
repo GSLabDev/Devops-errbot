@@ -66,4 +66,4 @@ COPY run.sh /app/venv/bin/run.sh
 EXPOSE 3141 3142
 VOLUME ["/srv"]
 
-CMD ["/app/venv/bin/run.sh"]
+CMD ["/app/venv/bin/docker-entrypoint.sh"]

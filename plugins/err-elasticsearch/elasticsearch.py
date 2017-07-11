@@ -1,4 +1,4 @@
-from errbot import BotPlugin, botcmd
+from errbot import BotPlugin, botcmd, arg_botcmd
 import os
 import requests
 import json
@@ -37,6 +37,8 @@ class Elasticsearch(BotPlugin):
             return 'Please give me a username'
         if not Password:
             return 'Please give me a password'
+        ELASTIC_USERNAME = Username
+        ELASTIC_PASSWORD = Password 
 
         return "```\n Credentials set successfully \n```"
 

@@ -31,7 +31,7 @@ class Mesos(BotPlugin):
             return 'Please give me a valid endpoint'
 
         endpoint = args
-        MESOS_WORKER_URL = os.environ.get('MESOS_WORKER_URL', "http://mesos_worker.service.local:5050")
+        MESOS_WORKER_URL = os.environ.get('MESOS_WORKER_URL', "http://mesos_worker.service.local:5051")
         mesos_url = MESOS_WORKER_URL + endpoint
         r = requests.post(mesos_url)
         result = r.json()

@@ -61,7 +61,7 @@ RUN virtualenv /app/venv
 RUN . /app/venv/bin/activate; pip install --no-cache-dir -r /app/requirements.txt
 
 COPY config.py /app/config.py
-COPY run.sh /app/venv/bin/run.sh
+COPY docker-entrypoint.sh /app/venv/bin/docker-entrypoint.sh
 
 EXPOSE 3141 3142
 VOLUME ["/srv"]

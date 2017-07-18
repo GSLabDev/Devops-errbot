@@ -21,12 +21,13 @@ Dockerfile to build an [Errbot](http://errbot.io) (the pluggable chatbot) contai
 
 ```
 docker run -d \
-    --name err \
-    -e BOT_USERNAME=err@xmmp.local \
-    -e BOT_PASSWORD=errbotpwd \
-    -e BOT_ADMINS=admin@xmpp.local \
-    -e CHATROOM_PRESENCE=err@conference.xmpp.local \
-    bipeens/Devops-errbot
+     --name err \
+     -e BACKEND=Slack \
+     -e BOT_ADMINS=bipeen.sawant@gslab.com \
+     -e CHATROOM_PRESENCE=milind,iotspbot,bipeen.sawant \
+     -e BOT_TOKEN=xoxb-197423219299-HtY88HbbQ9R9UzLCUlLBx1g1 \
+     -e BOT_LOG_LEVEL=DEBUG \
+     bipeen/devops-errbot
 ```
 
 # Configuration

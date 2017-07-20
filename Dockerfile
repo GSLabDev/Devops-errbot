@@ -13,6 +13,11 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
+COPY requirements.txt /tmp/requirements.txt
+COPY docker-entrypoint.sh /tmp/docker-entrypoint.sh
+COPY config.py /tmp/config.py
+RUN chmod 644 /tmp/requirements.txt /tmp/config.py && chmod 777 /tmp/docker-entrypoint.sh
+
 # Add err user and group
 RUN groupadd -r $ERR_USER \
     && useradd -r \
@@ -55,13 +60,13 @@ RUN chown -R $ERR_USER: /srv /app
 USER $ERR_USER
 WORKDIR /srv
 
-COPY requirements.txt /app/requirements.txt
+RUN cp -p /tmp/requirements.txt /app/requirements.txt
+RUN cp -p /tmp/config.py /app/config.py
 
 RUN virtualenv /app/venv
 RUN . /app/venv/bin/activate; pip install --no-cache-dir -r /app/requirements.txt
 
-COPY config.py /app/config.py
-COPY docker-entrypoint.sh /app/venv/bin/docker-entrypoint.sh
+RUN cp -p /tmp/docker-entrypoint.sh /app/venv/bin/docker-entrypoint.sh
 
 EXPOSE 3141 3142
 VOLUME ["/srv"]

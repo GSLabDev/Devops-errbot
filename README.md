@@ -32,6 +32,13 @@ docker run -d \
 
 # Configuration
 
+## Integrating chatopsbot to slack:
+- First create a slack team https://slack.com/create
+- Now create a bot user for your slack team https://my.slack.com/services/new/bot This bot user will enable to interact with any external service in our case its errbot.
+Note the name of bot user created in step 2 we need it to set BOT_ADMINS env while building the devops-errbot.
+- Also note the api-token of the created bot user and set it as BOT_TOKEN env.
+
+
 ## Image Runtime Config
 
 - **WAIT**: Seconds to sleep before starting the bot. Defaults to `None`
@@ -48,7 +55,7 @@ Below is the complete list of available options that can be used to customize yo
 - **BOT_SSL**: Use SSL for IRC backend. Default to `False`.
 - **BOT_ENDPOINT**: HipChat endpoint for hosted HipChat.
 - **BOT_NICKNAME**: Nickname for IRC backend.
-- **BOT_ADMINS**: Bot admins separated with comma. Defaults to `admin@localhost`.
+- **BOT_ADMINS**: Bot admins separated with comma. Defaults to `admin@localhost`. Count should be less than 3.
 - **CHATROOM_PRESENCE**: Chatrooms your bot should join on startup.
 - **CHATROOM_FN**: The FullName, or nickname, your bot should use. Defaults to `Err`.
 - **BOT_PREFIX**: Command prefix for the bot. Default to `!`.

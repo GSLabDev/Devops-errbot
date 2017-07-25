@@ -15,7 +15,7 @@
 
 # Introduction
 
-Dockerfile to build an [Errbot](http://errbot.io) (the pluggable chatbot) container image.
+Documentation for [Errbot](http://errbot.io) (the pluggable chatbot).
 
 # Quick Start
 
@@ -38,6 +38,9 @@ docker run -d \
 Note the name of bot user created in step 2 we need it to set BOT_ADMINS env while building the devops-errbot.
 - Also note the api-token of the created bot user and set it as BOT_TOKEN env.
 
+## Linking to existing bot user in Slack.
+- Log-in to your slack account
+- To list your bot user go to https://my.slack.com/services/new/bot. Then note the api-token and bot user name of the existing bot user and set it as BOT_TOKEN and BOT_ADMINS env respectively.
 
 ## Image Runtime Config
 
@@ -93,12 +96,6 @@ If you pass arguments to Errbot you have to set the `-c /srv/config.py` argument
 
 ```bash
 docker run -it -v /tmp/errbot:/srv bipeens/Devops-errbot -c /srv/production.py
-```
-
-## Err Help
-
-```bash
-$ docker run bipeens/Devops-errbot -h
 ```
 
 ## Run with text debug backend

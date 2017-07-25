@@ -28,6 +28,9 @@ docker run -d \
      -e BOT_TOKEN=xoxb-197423219299-HtY88HbbQ9R9UzLCUlLBx1g1 \
      -e BOT_LOG_LEVEL=DEBUG \
      bipeen/devops-errbot
+
+Once your container is up and running you can verify your slack is connected to errbot by running !help on the slack channel listed in BOT_ADMINS. This will also list down all the plugins commands with description. 
+
 ```
 
 # Configuration
@@ -107,3 +110,6 @@ docker run -it -v /tmp/errbot:/srv bipeens/Devops-errbot -c /srv/config.py -T
 # Exposed Ports
 
 * 3142 (Webserver if configured)
+
+# Get list of plugins
+

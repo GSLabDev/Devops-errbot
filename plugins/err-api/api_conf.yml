@@ -1,0 +1,70 @@
+---
+api:
+  get:
+  - service: mesosmaster
+    url: http://mesos-master.service.local:5050
+    help: Mesos master api endpoints
+    security:
+    - username: loki
+    - password: Loki@123
+    endpoints:
+    - name: version
+      help: Gives version for mesos-master
+      path: "/version"
+      response_fields:
+      - version:
+      - build_date:
+    - name: stats
+      help: Gives system stats for mesos master
+      path: "/system/stats.json"
+      response_fields:
+      - cpus_total: 
+      - mem_total_bytes:
+      - mem_free_bytes:
+  - service: mesosslave
+    url: http://mesos-slave.service.local:5051
+    help: Mesos slave api endpoints
+    endpoints:
+    - name: version
+      help: Give version for mesos-slave
+      path: "/version"
+      response_fields:
+      - version:
+      - build_date:
+    - name: stats
+      help: Give system stats for mesos slave
+      path: "/system/stats.json"
+      response_fields:
+      - cpus_total: 
+      - mem_total_bytes:
+      - mem_free_bytes:
+  - service: elasticsearch
+    url: https://elasticsearch-elk.service.local:9200
+    help: ElasticSearch api endpoints
+    security:
+    - username: loki
+    - password: Loki@123
+    endpoints:
+    - name: health
+      help: Gives health of elk scluster
+      path: "/_cluster/health"
+      response_fields:
+      - cluster_name: 
+      - status:
+      - number_of_nodes:
+      - unassigned_shards: 
+    - name: indices
+      help: Gives list of indices for elk cluster
+      path: "/_cat/indices"
+      response_fields:
+      - all:
+  post:
+  - service: mesos
+    url: http://mesos-master.service.local:5050
+    endpoints:
+    - name: version
+      help: Gives version for mesos
+      path: "/version"
+      response_fields:
+      - version_date: 
+      - version_time: 

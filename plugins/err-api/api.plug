@@ -1,0 +1,10 @@
+[Core]
+Name = Api
+Module = api
+
+[Documentation]
+Description = Run api calls
+
+[Python]
+Version = 2+
+

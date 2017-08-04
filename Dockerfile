@@ -16,7 +16,8 @@ ENV LANGUAGE en_US.UTF-8
 COPY requirements.txt /tmp/requirements.txt
 COPY docker-entrypoint.sh /tmp/docker-entrypoint.sh
 COPY config.py /tmp/config.py
-RUN chmod 644 /tmp/requirements.txt /tmp/config.py && chmod 777 /tmp/docker-entrypoint.sh
+COPY api_conf.yml /tmp/api_conf.yml
+RUN chmod 644 /tmp/requirements.txt /tmp/config.py /tmp/api_conf.yml && chmod 777 /tmp/docker-entrypoint.sh
 
 # Add err user and group
 RUN groupadd -r $ERR_USER \
@@ -62,6 +63,7 @@ WORKDIR /srv
 
 RUN cp -p /tmp/requirements.txt /app/requirements.txt
 RUN cp -p /tmp/config.py /app/config.py
+RUN cp -p /tmp/api_conf.yml /app/api_conf.yml
 
 RUN virtualenv /app/venv
 RUN . /app/venv/bin/activate; pip install --no-cache-dir -r /app/requirements.txt

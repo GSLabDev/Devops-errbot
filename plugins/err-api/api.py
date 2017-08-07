@@ -24,10 +24,10 @@ class Api(BotPlugin):
              config = yaml.load(stream)
              api_manager = configuration_manager.get_instance(config)
              if service == "help" or endpoint == "help":
-                print("Inside if")
+                self.log.info("-------Inside if")
                 response = api_manager.get_help("get", service)
              else:
-                print("Inside else")
+                self.log.info("-------Inside else")
                 response = api_manager.get_response("get", service, endpoint)
           except yaml.YAMLError as exc:
              print(exc)
@@ -45,3 +45,4 @@ class Api(BotPlugin):
 
         endpoint = args
         return "```\n" + str(result).strip() + "\n```"
+

@@ -1,5 +1,5 @@
 from errbot import BotPlugin, botcmd
-from configuration_manager import configuration_manager
+from scripts.configuration_manager import configuration_manager
 import os
 import requests
 import json

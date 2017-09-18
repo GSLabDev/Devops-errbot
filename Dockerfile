@@ -58,7 +58,9 @@ RUN mkdir /srv/data /srv/plugins /srv/errbackends /app
 
 ADD plugins/ /srv/plugins/
 
-RUN export PYTHONPATH=$PYTHONPATH:/srv/plugins/scripts
+ADD scripts/ /srv/scripts/
+
+RUN export PYTHONPATH=$PYTHONPATH:/srv/scripts
 
 RUN chown -R $ERR_USER: /srv /app
 

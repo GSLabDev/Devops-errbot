@@ -50,6 +50,7 @@ def processRequest(req):
     result = "No result found"
     intent = req.get("result").get("metadata").get("intentName")
     action = req.get("result").get("action")
+    print("------Action="+str(action))
     if intent.startswith('api-'):
        result = api_call(req, action)
     elif intent == "command":
@@ -74,17 +75,23 @@ def get_response(api_name, endpoint, method):
              config = yaml.load(stream)
              api_manager = configuration_manager.get_instance(config)
              if endpoint == "help":
+                print("-------Inside if")
                 response = api_manager.get_help(method, api_name)
              else:
+                print("-------Inside else")
                 response = api_manager.get_response(method, api_name, endpoint)
           except yaml.YAMLError as exc:
              print(exc)
+    print("------+++++++")
+    print(str(response).strip())
     return str(response).strip()
 
 def makeWebhookResult(req, data):
     result = req.get("result")
+    print("...................................")
     print(data)
     text_message = data
+    print(len(data))
     display = "Below are the details"
     slack_message = {
         "text": display,

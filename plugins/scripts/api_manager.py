@@ -30,10 +30,10 @@ class api_manager( function_manager ):
                url = webservice["url"]
                for endpoints in webservice["endpoints"]:
                    if endpoints["name"] == str(endpoint):
-                      log.debug(endpoints)
-                      log.debug(url)
+                      print(endpoints)
+                      print(url)
                       result = api_utils.call_webservice(endpoints, method, url)
-                      log.debug(result)
+                      print(result)
                       response = api_utils.get_response(endpoints, result)
                       return response
         

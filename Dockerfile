@@ -52,6 +52,8 @@ RUN apt-get update \
     && pip3 install -U setuptools \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install flask flask-wtf flask-babel markdown future json2html
+
 RUN mkdir /srv/data /srv/plugins /srv/errbackends /app
 
 ADD plugins/ /srv/plugins/
@@ -70,7 +72,7 @@ RUN . /app/venv/bin/activate; pip install --no-cache-dir -r /app/requirements.tx
 
 RUN cp -p /tmp/docker-entrypoint.sh /app/venv/bin/docker-entrypoint.sh
 
-EXPOSE 3141 3142
+EXPOSE 3141 3142 6000
 VOLUME ["/srv"]
 
 CMD ["/app/venv/bin/docker-entrypoint.sh"]

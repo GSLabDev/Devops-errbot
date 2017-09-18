@@ -2,7 +2,7 @@
 api:
   get:
   - service: mesosmaster
-    url: http://mesos-master.service.local:5050
+    url: http://mesos_master.service.local:5050
     help: Mesos master api endpoints
     security:
     - username: loki
@@ -22,7 +22,7 @@ api:
       - mem_total_bytes:
       - mem_free_bytes:
   - service: mesosslave
-    url: http://mesos-slave.service.local:5051
+    url: http://mesos_worker.service.local:5051
     help: Mesos slave api endpoints
     endpoints:
     - name: version
